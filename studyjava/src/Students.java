@@ -6,10 +6,6 @@ public class Students {
     private String address;
     private String personalNum;
 
-    Students tom = new Students("Tom", 18, "Daejeon", "123456");
-    Students steve = new Students("Steve", 25, "Seoul", "234567");
-    Students anne = new Students("Anne", 18, "Daejeon", "123456");
-
     public Students() { //기본생성자
     }
 
@@ -62,11 +58,6 @@ public class Students {
     }
     public void displayAddress(){
         System.out.println(this.address);
-    }
-    public void stuList(Students[] stuList){
-        stuList[0] = tom;
-        stuList[1] = steve;
-        stuList[2] = anne;
     }
     public void displayAll(){
         System.out.print("NAME: " + this.name);

@@ -1,4 +1,4 @@
-public class Java20230311Main {
+public class Java20240311Main {
     public static void main(String[] args) {
         Students a = new Students();
         //클래스의 생성자가 없는 경우 => 기본새성자가 자동으로 만들어짐
