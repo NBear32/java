@@ -1,7 +1,4 @@
-package Java20240425Exam;
-
-import java.awt.*;
-import java.util.Arrays;
+package Java20240325Exam;
 
 public class Example {
     public static void main(String[] args) {

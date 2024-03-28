@@ -1,6 +1,6 @@
 package Java20240327Exam;
 
-public class BinarySearchExample {
+public class BinarySearchExample {  // 정렬이 되어있어야 정상 동작 가능
     public static void binarySearch(int arr[], int first, int last, int key){ // first 시작, last 끝, key 찾을 값
         int mid = (first + last)/2;   // mid 에 배열의 중간 값을 넣음
         while( first <= last ){    // first 가 last 보다 같거나 작을때까지
@@ -10,7 +10,7 @@ public class BinarySearchExample {
                 System.out.println("Element is found at index: " + mid);
                 break;
             }else{
-                last = mid - 1;   // mid 가 last 보다 크면 last 는 mid - 1
+                last = mid - 1;   // 둘다 아니면 last 는 mid - 1
             }
             mid = (first + last)/2;   // mid 에 first 와 last 의 중간값을 넣고 다시 돌림
         }
