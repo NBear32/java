@@ -27,6 +27,29 @@ public class Q4 {
         Scanner sc = new Scanner(System.in);
         do {
             // 여기 코드를 작성
+            System.out.println("1~100까지의 수 중에 하나를 입력해주세요: ");
+            input = sc.nextInt();
+            count = count + 1;
+
+            if(input > 100 || input < 1) {
+                System.out.println("올바른 수를 입력해주세요");
+            } else if(input < answer){
+                System.out.println("더 큰 수를 입력하세요");
+            } else if (input > answer){
+                System.out.println("더 작은 수를 입력하세요");
+            } else if (input == answer){
+                System.out.println("맞췄습니다");
+                break;
+            }
+            else{
+                System.out.println("올바른 수를 입력해주세요");
+            }
+            //System.out.println(count);
+
+
+            System.out.println();
         } while(true); // 무한반복문
+
+        System.out.println("시도횟수는 " + count + "번입니다");
     }
 }

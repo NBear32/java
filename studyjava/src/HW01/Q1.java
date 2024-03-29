@@ -10,7 +10,14 @@ public class Q1 {
             입력값이 0이면 "0" 출력
             입력값이 -10이면 "음수" 출력 * */
         Scanner sc = new Scanner(System.in);
+        System.out.print("정수를 입력해주세요: ");
         int num = sc.nextInt();
+
+        String numStr = (num > 0) ? "양수" : "음수";
+        numStr = (num == 0) ? "0" : numStr;
+
+        System.out.println(numStr);
+
 
     }
 }

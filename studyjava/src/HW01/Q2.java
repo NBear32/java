@@ -22,5 +22,14 @@ public class Q2 {
         double result;
 
 
+        if (input == 1){
+            result = 5 * (temp - 32) / 9;
+            System.out.print("화씨 " + temp + "도는 섭씨 " + String.format("%.1f", result)  + "도");
+        }
+        else if (input == 2) {
+            result = ((9 * temp) / 5) + 32;
+            System.out.print("섭씨 " + temp + "도는 화씨 " + String.format("%.1f",result) + "도");
+        }
+
     }
 }

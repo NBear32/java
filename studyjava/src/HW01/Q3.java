@@ -16,15 +16,92 @@ package HW01;
     3반 27번 영철 : 평균 86점
 */
 class Student {
+    String name; // 학생이름
+    int ban; // 반
+    int no; // 번호
+    int kor; // 국어점수
+    int eng; // 영어점수
+    int math; // 수학점수
+
+    public Student() {
+    }
+
+    public Student(String name, int ban, int no, int kor, int eng, int math) {
+        this.name = name;
+        this.ban = ban;
+        this.no = no;
+        this.kor = kor;
+        this.eng = eng;
+        this.math = math;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getBan() {
+        return ban;
+    }
+
+    public void setBan(int ban) {
+        this.ban = ban;
+    }
+
+    public int getNo() {
+        return no;
+    }
+
+    public void setNo(int no) {
+        this.no = no;
+    }
+
+    public int getKor() {
+        return kor;
+    }
+
+    public void setKor(int kor) {
+        this.kor = kor;
+    }
+
+    public int getEng() {
+        return eng;
+    }
+
+    public void setEng(int eng) {
+        this.eng = eng;
+    }
+
+    public int getMath() {
+        return math;
+    }
+
+    public void setMath(int math) {
+        this.math = math;
+    }
+
+    public int getAvg(){
+        int avr = (this.kor + this.eng + this.math) / 3;
+        return avr;
+    }
+
+    @Override
+    public String toString(){
+        String std = (this.ban +  "반 " + this.no + "번 " + this.name);
+        return std;
+    }
 
 }
 public class Q3 {
     public static void main(String[] args) {
-//        Student a = new Student("동수", 1, 3, 90, 80, 100);
-//        Student b = new Student("창수", 2, 10, 80, 70, 85);
-//        Student c = new Student("영철", 3, 27, 95, 75, 90);
-//        System.out.println(a.toString() + " : 평균 " + a.getAvg() + "점"); //1반 3번 동수 : 평균 90점
-//        System.out.println(b.toString() + " : 평균 " + b.getAvg() + "점"); //2반 10번 창수 : 평균 78점
-//        System.out.println(c.toString() + " : 평균 " + c.getAvg() + "점"); //3반 27번 영철 : 평균 86점
+        Student a = new Student("동수", 1, 3, 90, 80, 100);
+        Student b = new Student("창수", 2, 10, 80, 70, 85);
+        Student c = new Student("영철", 3, 27, 95, 75, 90);
+        System.out.println(a.toString() + " : 평균 " + a.getAvg() + "점"); //1반 3번 동수 : 평균 90점
+        System.out.println(b.toString() + " : 평균 " + b.getAvg() + "점"); //2반 10번 창수 : 평균 78점
+        System.out.println(c.toString() + " : 평균 " + c.getAvg() + "점"); //3반 27번 영철 : 평균 86점
     }
 }
