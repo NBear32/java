@@ -55,4 +55,15 @@ public class Lecture {
     public void setLectureNum(int lectureNum) {
         this.lectureNum = lectureNum;
     }
+
+    public static String findLecNameFromLecNumber(int lecNumber){
+        String lecName = "";
+        for(int i = 0; i < Main.lectureList.size(); i++){
+            if (lecNumber == Main.lectureList.get(i).lectureNum){
+                lecName = Main.lectureList.get(i).getLecName();
+            }
+        }
+
+        return lecName;
+    }
 }

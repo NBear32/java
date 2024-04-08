@@ -3,6 +3,8 @@ package Java20240328EduServer;
 import java.util.ArrayList;
 
 public class Review {
+
+    static int reviewNumber = 0;
     int reviewId;
     int rating;
     String text;
@@ -12,7 +14,7 @@ public class Review {
     public Review() {
     }
 
-    public Review(int reviewId, int rating, String text, String loginId, int lectureId) {
+    public Review(int rating, String text, String loginId, int lectureId) {
         this.reviewId = reviewId;
         this.rating = rating;
         this.text = text;
@@ -72,7 +74,8 @@ public class Review {
                 }
             }
             for(int i = 0; i < Main.reviewArray.size(); i++) {
-                if (review.getLoginId().equals(Main.reviewArray.get(i).loginId)){
+                if (review.getLoginId().equals(Main.reviewArray.get(i).loginId)
+                && review.getLectureId() == Main.reviewArray.get(i).getLectureId()){
                     trueReview = false;
                     i = Main.reviewArray.size();
                 }
@@ -80,6 +83,8 @@ public class Review {
         }
         if (trueReview){
             Main.reviewArray.add(review);
+            Main.reviewArray.get(reviewNumber).reviewId = reviewNumber + 1;
+            reviewNumber++;
         }
         return trueReview;
     }

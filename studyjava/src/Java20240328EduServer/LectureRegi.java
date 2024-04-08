@@ -2,7 +2,9 @@ package Java20240328EduServer;
 
 public class LectureRegi {
     String userid;
+
     int lectureid;
+
 
 
     public LectureRegi() {

@@ -13,6 +13,8 @@ public class Main {
     static ArrayList<Lecture> lectureList = new ArrayList<>();
     static ArrayList<LectureRegi> lecUserArray = new ArrayList<>();
     static ArrayList<Review> reviewArray = new ArrayList<>();
+    static ArrayList<Teacher> teacherArray = new ArrayList<>();
+    static ArrayList<LectureTeacher> lecTeacherArray = new ArrayList<>();
 
     public static void main(String[] args) {
 
@@ -25,7 +27,9 @@ public class Main {
 
         while (true) {
             System.out.println();
-            System.out.println("1. 강의 조회 / 2. 유저 조회 / 3. 수강생 이메일 // 종료하시려면 이외의 아무 키나 눌러주세요");
+            System.out.println("1. 강의 조회 / 2. 유저 조회 / 3. 수강생 이메일");
+            System.out.println("4. 리뷰 조회 / 5. 강사 조회 / 6. 과목 조회");
+            System.out.println("종료하시려면 이외의 아무 키나 눌러주세요");
             int select = scan.nextInt();
 
             if (select == 1) {
@@ -34,6 +38,12 @@ public class Main {
                 FindLec(userList, lecUserArray, lectureList);
             } else if (select == 3) {
                 FindEmail(userList, lecUserArray, lectureList);
+            } else if (select == 4) {
+                ReadReview();
+            } else if (select == 5) {
+                System.out.println("강사: " + Teacher.getTeacherByLectureId());
+            } else if (select == 6) {
+                System.out.println(Teacher.getLectureTitleListByTeacherId());
             } else {
                 System.out.println("조회를 종료합니다.");
                 break;
@@ -43,7 +53,19 @@ public class Main {
     }
 
 
-        public static void FindId (ArrayList < User > userList, ArrayList < LectureRegi > lecUserArray){
+
+    public static void ReadReview(){
+       // System.out.println(reviewArray.size());
+        for(int i = 0; i < reviewArray.size(); i++) {
+            System.out.println("리뷰 번호: " + reviewArray.get(i).reviewId);
+            System.out.println("평점: " + reviewArray.get(i).rating + "점");
+            System.out.println("리뷰: " + reviewArray.get(i).text);
+            System.out.println("아이디: " + reviewArray.get(i).loginId);
+            System.out.println("수강 강의: " + lectureList.get(reviewArray.get(i).lectureId - 1).getLecName());
+            System.out.println();
+        }
+    }
+    public static void FindId (ArrayList < User > userList, ArrayList < LectureRegi > lecUserArray){
             Scanner scan = new Scanner(System.in);
             System.out.println("조회를 원하시는 강의의 번호를 입력해주세요: ");
             int select = scan.nextInt();
